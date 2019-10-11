@@ -6,10 +6,12 @@ window.addEventListener("load", function(){
     let copilotName = document.getElementById("copilotName");
     let fuelLevel = document.getElementById("fuelLevel");
     let cargoWeight = document.getElementById("cargoWeight");
+
     let pilotValid = (pilotName.value !== "" && typeof(pilotName.value)==="string");
     let copilotValid = (copilotName.value !== "" && typeof(copilotName.value)==="string");
     let fuelValid = (fuelLevel.value !== "" && !isNaN(Number(fuelLevel.value)));
     let cargoValid = (cargoWeight.value !== "" && !isNaN(Number(cargoWeight.value)));
+    
     if (!pilotValid) {
       alert("Please enter a pilot name to launch.");
       event.preventDefault();
