@@ -37,9 +37,10 @@ window.addEventListener("load", function(){
 
   function updateCargo(){
     if (Number(cargoWeight.value)>10000) {
-      cargoStatus.innerHTML `There is too much mass for the shuttle to take off.`
+      cargoStatus.innerHTML = "There is too much mass for the shuttle to take off.";
       return true;
     }
+    
   }
 
   subButton.addEventListener("click", function(event){
@@ -64,8 +65,10 @@ window.addEventListener("load", function(){
     } else {
       updatePilot();
       updateCopilot();
-      
-      if (updateFuel()||updateCargo()){
+      let fuelCheck = updateFuel();
+      let cargoCheck = updateCargo();
+
+      if (fuelCheck || cargoCheck){
         faultyItems.style.visibility = "visible";
         launchStatus.innerHTML = `Shuttle not ready for launch`;
         launchStatus.style.color = "red";
